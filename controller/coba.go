@@ -80,8 +80,8 @@ func GetPemainID(c *fiber.Ctx) error {
 // @Tags Pemain
 // @Accept json
 // @Produce json
-// @Param request body ReqPresensi true "Payload Body [RAW]"
-// @Success 200 {object} Presensi
+// @Param request body ReqPemain true "Payload Body [RAW]"
+// @Success 200 {object} Pemain
 // @Failure 400
 // @Failure 500
 // @Router /ins [post]

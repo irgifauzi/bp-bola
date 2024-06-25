@@ -1,0 +1,200 @@
+basePath: /
+definitions:
+  controller.Pemain:
+    properties:
+      _id:
+        example: "123456789"
+        type: string
+      berat:
+        example: 80
+        type: number
+      nama_pemain:
+        example: haaland
+        type: string
+      negara:
+        example: Denmark
+        type: string
+      no_punggung:
+        example: 9
+        type: integer
+      posisi:
+        example: Striker
+        type: string
+      tanggal_lahir:
+        example: "2024-09-01T00:00:00Z"
+        format: date-time
+        type: string
+      tim:
+        example: Manchester City
+        type: string
+      tinggi:
+        example: 192
+        type: number
+    type: object
+  controller.ReqPemain:
+    properties:
+      _id:
+        example: "123456789"
+        type: string
+      berat:
+        example: 80
+        type: number
+      nama_pemain:
+        example: haaland
+        type: string
+      negara:
+        example: Denmark
+        type: string
+      no_punggung:
+        example: 9
+        type: integer
+      posisi:
+        example: Striker
+        type: string
+      tanggal_lahir:
+        example: "2024-09-01T00:00:00Z"
+        format: date-time
+        type: string
+      tim:
+        example: Manchester City
+        type: string
+      tinggi:
+        example: 192
+        type: number
+    type: object
+host: ws-irgi2024-8b615be21b10.herokuapp.com
+info:
+  contact:
+    email: 714220035@std.ulbi.ac.id
+    name: API Support
+    url: https://github.com/irgifauzi
+  description: This is a sample swagger for Fiber
+  title: TES SWAGGER ULBI
+  version: "1.0"
+paths:
+  /delete/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Hapus data pemain.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Delete data pemain.
+      tags:
+      - Pemain
+  /ins:
+    post:
+      consumes:
+      - application/json
+      description: Input data pemain.
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controller.ReqPemain'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Pemain'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Insert data pemain.
+      tags:
+      - Pemain
+  /pemain:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil semua data pemain.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Pemain'
+      summary: Get All Data Pemain.
+      tags:
+      - Pemain
+  /pemain/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Ambil per ID data pemain.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Pemain'
+        "400":
+          description: Bad Request
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+      summary: Get By ID Data Pemain.
+      tags:
+      - Pemain
+  /update/{id}:
+    put:
+      consumes:
+      - application/json
+      description: Ubah data pemain.
+      parameters:
+      - description: Masukan ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/controller.ReqPemain'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/controller.Pemain'
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: Update data pemain.
+      tags:
+      - Pemain
+schemes:
+- https
+- http
+swagger: "2.0"

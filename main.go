@@ -12,7 +12,7 @@ import (
 
 
 	"github.com/gofiber/fiber/v2"
-	
+   _"github.com/irgifauzi/bp-bola/docs"
 )
 
 // @title TES SWAGGER ULBI
