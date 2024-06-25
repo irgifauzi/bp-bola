@@ -1,7 +1,7 @@
 package url
 
 import (
-	"github.com/irgifauzi/ws-irgi2025/controller"
+	"github.com/irgifauzi/bp-bola/controller"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/swagger"
@@ -25,5 +25,4 @@ func Web(page *fiber.App) {
 	page.Put("/update/:id", controller.UpdateDataPemain)
 	page.Delete("/delete/:id", controller.DeletePemainByID)
 	page.Get("/docs/*", swagger.HandlerDefault)
-
 }

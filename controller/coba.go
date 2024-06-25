@@ -28,7 +28,7 @@ func Homepage(c *fiber.Ctx) error {
 // @Success 200 {object} Pemain
 // @Router /pemain [get]
 func GetPemain(c *fiber.Ctx) error {
-	ps := cek.GetAllPemain(config.Ulbimongoconn, "pemain")
+	ps := cek.GetAllDataPemain(config.Ulbimongoconn, "pemain")
 	return c.JSON(ps)
 }
 
@@ -95,13 +95,14 @@ func InsertDataPemain(c *fiber.Ctx) error {
 		})
 	}
 	insertedID, err := cek.InsertPemain(db, "pemain",
-		pemain.nama_pemain,
-		pemain.tim,
-		pemain.posisi,
-		pemain.tinggi,
-		pemain.berat,
-		pemain.tanggal_lahir,
-		pemain.negara)
+		pemain.Nama_Pemain,
+		pemain.Tim,
+		pemain.Posisi,
+		pemain.Tinggi,
+		pemain.Berat,
+		pemain.Tanggal_Lahir,
+		pemain.Negara,
+		pemain.No_Punggung)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
@@ -153,13 +154,14 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 	// Call the UpdatePemain function with the parsed ID and the Pemain object
 	err = cek.UpdatePemain(db, "pemain",
 		objectID,
-		pemain.nama_pemain,
-		pemain.tim,
-		pemain.posisi,
-		pemain.tinggi,
-		pemain.berat,
-		pemain.tanggal_lahir,
-		pemain.negara)
+		pemain.Nama_Pemain,
+		pemain.Tim,
+		pemain.Posisi,
+		pemain.Tinggi,
+		pemain.Berat,
+		pemain.Tanggal_Lahir,
+		pemain.Negara,
+		pemain.No_Punggung)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
