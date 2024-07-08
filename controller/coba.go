@@ -27,7 +27,7 @@ func Homepage(c *fiber.Ctx) error {
 // @Produce json
 // @Success 200 {object} Pemain
 // @Router /pemain [get]
-func GetAllPemain(c *fiber.Ctx) error {
+func GetPemain(c *fiber.Ctx) error {
 	ps := cek.GetAllDataPemain(config.Ulbimongoconn, "pemain")
 	return c.JSON(ps)
 }
