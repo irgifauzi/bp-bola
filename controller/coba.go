@@ -18,7 +18,7 @@ func Homepage(c *fiber.Ctx) error {
 	ipaddr := musik.GetIPaddress()
 	return c.JSON(ipaddr)
 }
-
+//p
 // GetPemain godoc
 // @Summary Get All Data Pemain.
 // @Description Mengambil semua data pemain.
