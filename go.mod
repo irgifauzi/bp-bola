@@ -7,7 +7,7 @@ require (
 	github.com/aiteung/musik v0.0.5
 	github.com/gofiber/fiber/v2 v2.52.4
 	github.com/gofiber/swagger v1.0.0
-	github.com/irgifauzi/back-bola v0.0.3
+	github.com/irgifauzi/back-bola v0.0.5
 	github.com/swaggo/swag v1.16.3
 	github.com/whatsauth/whatsauth v0.1.82
 	go.mau.fi/whatsmeow v0.0.0-20240619210240-329c2336a6f1

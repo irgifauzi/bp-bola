@@ -19,7 +19,7 @@ func Web(page *fiber.App) {
 	page.Options("/", controller.Sink)
 
 	page.Get("/checkip", controller.Homepage)
-	page.Get("/pemain", controller.GetPemain)
+	page.Get("/pemain", controller.GetAllPemain)
 	page.Get("/pemain/:id", controller.GetPemainID)
 	page.Post("/insert", controller.InsertDataPemain)
 	page.Put("/update/:id", controller.UpdateDataPemain)

@@ -27,7 +27,7 @@ func Homepage(c *fiber.Ctx) error {
 // @Produce json
 // @Success 200 {object} Pemain
 // @Router /pemain [get]
-func GetPemain(c *fiber.Ctx) error {
+func GetAllPemain(c *fiber.Ctx) error {
 	ps := cek.GetAllDataPemain(config.Ulbimongoconn, "pemain")
 	return c.JSON(ps)
 }
@@ -88,12 +88,27 @@ func GetPemainID(c *fiber.Ctx) error {
 func InsertDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var pemain inimodel.Pemain
+
+	// Parse the request body into the pemain struct
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
 		})
 	}
+
+	// Validate required fields
+	if pemain.Nama_Pemain == "" || pemain.Tim.Nama_Club == "" || pemain.Tim.Liga == "" || pemain.Tim.Tahun_Berdiri == 0 ||
+		pemain.Tim.Stadion == "" || pemain.Tim.Manajer == "" || pemain.Tim.Jumlah_Pemain == 0 || pemain.Tim.Logo == "" ||
+		pemain.Posisi == "" || pemain.Tinggi == 0 || pemain.Berat == 0 || pemain.Tanggal_Lahir == primitive.DateTime(0) ||
+		pemain.Negara == "" || pemain.No_Punggung == 0 {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"status":  http.StatusBadRequest,
+			"message": "Fill all the form.",
+		})
+	}
+
+	// Insert the player into the database
 	insertedID, err := cek.InsertPemain(db, "pemain",
 		pemain.Nama_Pemain,
 		pemain.Tim,
@@ -109,12 +124,15 @@ func InsertDataPemain(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
+
 	return c.Status(http.StatusOK).JSON(fiber.Map{
 		"status":      http.StatusOK,
-		"message":     "Data pemain berhasil disimpan.",
+		"message":     "Data berhasil disimpan.",
 		"inserted_id": insertedID,
 	})
 }
+
+
 // UpdateDataPemain godoc
 // @Summary Update data pemain.
 // @Description Ubah data pemain.
