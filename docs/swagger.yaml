@@ -3,6 +3,7 @@ definitions:
   controller.Pemain:
     properties:
       _id:
+        example: "12345"
         type: string
       berat:
         example: 80
@@ -185,7 +186,7 @@ paths:
     put:
       consumes:
       - application/json
-      description: Ubah data pemain.
+      description: Ubah data Pemain.
       parameters:
       - description: Masukan ID
         in: path
@@ -209,7 +210,7 @@ paths:
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Update data pemain.
+      summary: Update data Pemain.
       tags:
       - Pemain
 schemes:

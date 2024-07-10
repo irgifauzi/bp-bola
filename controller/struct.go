@@ -5,7 +5,7 @@ import (
 )
 
 type Club struct {
-	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
+	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty" example:"12345"`
 	Nama_Club     string             `bson:"nama_club,omitempty" json:"nama_club,omitempty" example:"Real Madrid"`
 	Liga          string             `bson:"liga,omitempty" json:"liga,omitempty" example:"La liga"`
 	Tahun_Berdiri int                `bson:"tahun_berdiri,omitempty" json:"tahun_berdiri,omitempty" example:"1985"`
@@ -16,7 +16,7 @@ type Club struct {
 }
 
 type Pemain struct {
-	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
+	ID            primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty" example:"12345"`
 	NamaPemain    string             `bson:"nama_pemain,omitempty" json:"nama_pemain,omitempty" example:"haaland"`
 	Tim           ReqClub            `bson:"tim,omitempty" json:"tim,omitempty"`
 	Posisi        string             `bson:"posisi,omitempty" json:"posisi,omitempty" example:"Striker"`

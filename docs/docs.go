@@ -160,7 +160,7 @@ const docTemplate = `{
         },
         "/update/{id}": {
             "put": {
-                "description": "Ubah data pemain.",
+                "description": "Ubah data Pemain.",
                 "consumes": [
                     "application/json"
                 ],
@@ -170,7 +170,7 @@ const docTemplate = `{
                 "tags": [
                     "Pemain"
                 ],
-                "summary": "Update data pemain.",
+                "summary": "Update data Pemain.",
                 "parameters": [
                     {
                         "type": "string",
@@ -211,7 +211,8 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "12345"
                 },
                 "berat": {
                     "type": "number",

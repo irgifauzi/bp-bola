@@ -133,8 +133,8 @@ func InsertDataPemain(c *fiber.Ctx) error {
 
 
 // UpdateDataPemain godoc
-// @Summary Update data pemain.
-// @Description Ubah data pemain.
+// @Summary Update data Pemain.
+// @Description Ubah data Pemain.
 // @Tags Pemain
 // @Accept json
 // @Produce json
