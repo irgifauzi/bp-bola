@@ -67,6 +67,8 @@ github.com/irgifauzi/back-bola v0.0.6 h1:lgVdgpqTYAt9ZRF4lGPrgboNAUlPeNE7sZZyRfC
 github.com/irgifauzi/back-bola v0.0.6/go.mod h1:ZqNfI37NJjo/u+1iow0H72KULeL7HvBslFN2qtqTqkQ=
 github.com/irgifauzi/back-bola v0.0.7 h1:wc8pJxg8UcTfVcZaTzN8IalQxeVcyu0A1DfEr1CTqg8=
 github.com/irgifauzi/back-bola v0.0.7/go.mod h1:ZqNfI37NJjo/u+1iow0H72KULeL7HvBslFN2qtqTqkQ=
+github.com/irgifauzi/back-bola v0.0.8 h1:Bdt/TfiJA5fwA4+Pbba7amImfyqpST8oEKkND4Cq56g=
+github.com/irgifauzi/back-bola v0.0.8/go.mod h1:ZqNfI37NJjo/u+1iow0H72KULeL7HvBslFN2qtqTqkQ=
 github.com/jcmturner/aescts/v2 v2.0.0/go.mod h1:AiaICIRyfYg35RUkr8yESTqvSy7csK90qZ5xfvvsoNs=
 github.com/jcmturner/dnsutils/v2 v2.0.0/go.mod h1:b0TnjGOvI/n42bZa+hmXL+kFJZsFT7G4t3HTlQ184QM=
 github.com/jcmturner/gofork v1.0.0/go.mod h1:MK8+TM0La+2rjBD4jE12Kj1pCCxK7d2LK/UM3ncEo0o=

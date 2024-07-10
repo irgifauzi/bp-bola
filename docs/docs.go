@@ -236,8 +236,7 @@ const docTemplate = `{
                 },
                 "tanggal_lahir": {
                     "type": "string",
-                    "format": "date-time",
-                    "example": "2024-09-01T00:00:00Z"
+                    "example": "09-06-1985"
                 },
                 "tim": {
                     "$ref": "#/definitions/controller.ReqClub"
@@ -306,8 +305,7 @@ const docTemplate = `{
                 },
                 "tanggal_lahir": {
                     "type": "string",
-                    "format": "date-time",
-                    "example": "2024-09-01T00:00:00Z"
+                    "example": "09-06-1985"
                 },
                 "tim": {
                     "$ref": "#/definitions/controller.ReqClub"

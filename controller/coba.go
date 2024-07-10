@@ -100,7 +100,7 @@ func InsertDataPemain(c *fiber.Ctx) error {
 	// Validate required fields
 	if pemain.Nama_Pemain == "" || pemain.Tim.Nama_Club == "" || pemain.Tim.Liga == "" || pemain.Tim.Tahun_Berdiri == 0 ||
 		pemain.Tim.Stadion == "" || pemain.Tim.Manajer == "" || pemain.Tim.Jumlah_Pemain == 0 || pemain.Tim.Logo == "" ||
-		pemain.Posisi == "" || pemain.Tinggi == 0 || pemain.Berat == 0 || pemain.Tanggal_Lahir == primitive.DateTime(0) ||
+		pemain.Posisi == "" || pemain.Tinggi == 0 || pemain.Berat == 0 || pemain.Tanggal_Lahir == "" ||
 		pemain.Negara == "" || pemain.No_Punggung == 0 {
 		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
 			"status":  http.StatusBadRequest,
@@ -147,7 +147,6 @@ func InsertDataPemain(c *fiber.Ctx) error {
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	id := c.Params("id")
-	// Parse the ID into an ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{

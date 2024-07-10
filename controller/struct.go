@@ -22,7 +22,7 @@ type Pemain struct {
 	Posisi        string             `bson:"posisi,omitempty" json:"posisi,omitempty" example:"Striker"`
 	Tinggi        float64            `bson:"tinggi,omitempty" json:"tinggi,omitempty" example:"192.0"`
 	Berat         float64            `bson:"berat,omitempty" json:"berat,omitempty" example:"80.0"`
-	TanggalLahir  primitive.DateTime `bson:"tanggal_lahir,omitempty" json:"tanggal_lahir,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
+	TanggalLahir  string 			`bson:"tanggal_lahir,omitempty" json:"tanggal_lahir,omitempty" swaggertype:"string" example:"09-06-1985"`
 	Negara        string             `bson:"negara,omitempty" json:"negara,omitempty" example:"Denmark"`
 	NoPunggung    int                `bson:"no_punggung,omitempty" json:"no_punggung,omitempty" example:"9"`
 }
@@ -40,7 +40,7 @@ type ReqPemain struct {
 	Posisi        string             `bson:"posisi,omitempty" json:"posisi,omitempty" example:"Striker"`
 	Tinggi        float64            `bson:"tinggi,omitempty" json:"tinggi,omitempty" example:"192.0"`
 	Berat         float64            `bson:"berat,omitempty" json:"berat,omitempty" example:"80.0"`
-	TanggalLahir  primitive.DateTime `bson:"tanggal_lahir,omitempty" json:"tanggal_lahir,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
+	TanggalLahir  string 			`bson:"tanggal_lahir,omitempty" json:"tanggal_lahir,omitempty" swaggertype:"string" example:"09-06-1985"`
 	Negara        string             `bson:"negara,omitempty" json:"negara,omitempty" example:"Denmark"`
 	NoPunggung    int                `bson:"no_punggung,omitempty" json:"no_punggung,omitempty" example:"9"`
 }

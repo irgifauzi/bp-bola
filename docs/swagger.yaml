@@ -21,8 +21,7 @@ definitions:
         example: Striker
         type: string
       tanggal_lahir:
-        example: "2024-09-01T00:00:00Z"
-        format: date-time
+        example: 09-06-1985
         type: string
       tim:
         $ref: '#/definitions/controller.ReqClub'
@@ -72,8 +71,7 @@ definitions:
         example: Striker
         type: string
       tanggal_lahir:
-        example: "2024-09-01T00:00:00Z"
-        format: date-time
+        example: 09-06-1985
         type: string
       tim:
         $ref: '#/definitions/controller.ReqClub'
