@@ -108,7 +108,6 @@ func InsertDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	// Insert the player into the database
 	insertedID, err := cek.InsertPemain(db, "pemain",
 		pemain.Nama_Pemain,
 		pemain.Tim,
@@ -147,10 +146,7 @@ func InsertDataPemain(c *fiber.Ctx) error {
 // @Router /update/{id} [put]
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
-
-	// Get the ID from the URL parameter
 	id := c.Params("id")
-
 	// Parse the ID into an ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
@@ -159,8 +155,6 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
-	// Parse the request body into a Presensi object
 	var pemain inimodel.Pemain
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
