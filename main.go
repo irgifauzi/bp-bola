@@ -23,7 +23,7 @@ import (
 // @contact.url https://github.com/irgifauzi
 // @contact.email 714220035@std.ulbi.ac.id
 
-// @host ws-irgi2024-8b615be21b10.herokuapp.com
+// @host uas-bola-919c3c7dac41.herokuapp.com
 // @BasePath /
 // @schemes https http
 

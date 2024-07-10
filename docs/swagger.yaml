@@ -81,7 +81,7 @@ definitions:
         example: 192
         type: number
     type: object
-host: ws-irgi2024-8b615be21b10.herokuapp.com
+host: uas-bola-919c3c7dac41.herokuapp.com
 info:
   contact:
     email: 714220035@std.ulbi.ac.id
