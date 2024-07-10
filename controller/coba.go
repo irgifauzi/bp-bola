@@ -19,7 +19,7 @@ func Homepage(c *fiber.Ctx) error {
 	return c.JSON(ipaddr)
 }
 //p
-// GetPemain godoc
+// GetAllPemain godoc
 // @Summary Get All Data Pemain.
 // @Description Mengambil semua data pemain.
 // @Tags Pemain
@@ -27,7 +27,7 @@ func Homepage(c *fiber.Ctx) error {
 // @Produce json
 // @Success 200 {object} Pemain
 // @Router /pemain [get]
-func GetPemain(c *fiber.Ctx) error {
+func GetAllPemain(c *fiber.Ctx) error {
 	ps := cek.GetAllDataPemain(config.Ulbimongoconn, "pemain")
 	return c.JSON(ps)
 }
