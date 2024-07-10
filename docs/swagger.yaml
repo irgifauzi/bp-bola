@@ -3,7 +3,6 @@ definitions:
   controller.Pemain:
     properties:
       _id:
-        example: "123456789"
         type: string
       berat:
         example: 80
@@ -25,17 +24,37 @@ definitions:
         format: date-time
         type: string
       tim:
-        example: Manchester City
-        type: string
+        $ref: '#/definitions/controller.ReqClub'
       tinggi:
         example: 192
         type: number
     type: object
+  controller.ReqClub:
+    properties:
+      jumlah_pemain:
+        example: 11
+        type: integer
+      liga:
+        example: La liga
+        type: string
+      logo:
+        example: https://upload.wikimedia.org/wikipedia/id/4/43/Al-Nassr_fc.png
+        type: string
+      manajer:
+        example: Jajang
+        type: string
+      nama_club:
+        example: Real Madrid
+        type: string
+      stadion:
+        example: Si Jalak
+        type: string
+      tahun_berdiri:
+        example: 1985
+        type: integer
+    type: object
   controller.ReqPemain:
     properties:
-      _id:
-        example: "123456789"
-        type: string
       berat:
         example: 80
         type: number
@@ -56,8 +75,7 @@ definitions:
         format: date-time
         type: string
       tim:
-        example: Manchester City
-        type: string
+        $ref: '#/definitions/controller.ReqClub'
       tinggi:
         example: 192
         type: number

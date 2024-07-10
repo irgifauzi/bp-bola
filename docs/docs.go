@@ -211,8 +211,7 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string",
-                    "example": "123456789"
+                    "type": "string"
                 },
                 "berat": {
                     "type": "number",
@@ -240,8 +239,7 @@ const docTemplate = `{
                     "example": "2024-09-01T00:00:00Z"
                 },
                 "tim": {
-                    "type": "string",
-                    "example": "Manchester City"
+                    "$ref": "#/definitions/controller.ReqClub"
                 },
                 "tinggi": {
                     "type": "number",
@@ -249,13 +247,42 @@ const docTemplate = `{
                 }
             }
         },
+        "controller.ReqClub": {
+            "type": "object",
+            "properties": {
+                "jumlah_pemain": {
+                    "type": "integer",
+                    "example": 11
+                },
+                "liga": {
+                    "type": "string",
+                    "example": "La liga"
+                },
+                "logo": {
+                    "type": "string",
+                    "example": "https://upload.wikimedia.org/wikipedia/id/4/43/Al-Nassr_fc.png"
+                },
+                "manajer": {
+                    "type": "string",
+                    "example": "Jajang"
+                },
+                "nama_club": {
+                    "type": "string",
+                    "example": "Real Madrid"
+                },
+                "stadion": {
+                    "type": "string",
+                    "example": "Si Jalak"
+                },
+                "tahun_berdiri": {
+                    "type": "integer",
+                    "example": 1985
+                }
+            }
+        },
         "controller.ReqPemain": {
             "type": "object",
             "properties": {
-                "_id": {
-                    "type": "string",
-                    "example": "123456789"
-                },
                 "berat": {
                     "type": "number",
                     "example": 80
@@ -282,8 +309,7 @@ const docTemplate = `{
                     "example": "2024-09-01T00:00:00Z"
                 },
                 "tim": {
-                    "type": "string",
-                    "example": "Manchester City"
+                    "$ref": "#/definitions/controller.ReqClub"
                 },
                 "tinggi": {
                     "type": "number",
