@@ -151,7 +151,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	err = cek.UpdatePemain(db, "Games",
+	err = cek.UpdatePemain(db, "Pemain",
 		objectID,
 		pemain.Nama_Pemain,
 		pemain.Tim,
