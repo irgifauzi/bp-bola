@@ -63,6 +63,8 @@ github.com/gorilla/websocket v1.5.3/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/ad
 github.com/hashicorp/go-uuid v1.0.2/go.mod h1:6SBZvOh/SIDV7/2o3Jml5SYk/TvGqwFJ/bN7x4byOro=
 github.com/irgifauzi/back-bola v0.0.10 h1:py+OVrtpqk85fNssPJzM2kXKdC4290z+1bfpffG8uGE=
 github.com/irgifauzi/back-bola v0.0.10/go.mod h1:ZqNfI37NJjo/u+1iow0H72KULeL7HvBslFN2qtqTqkQ=
+github.com/irgifauzi/back-bola v0.0.11 h1:0UveLK35UMg/Fkmyi2+mycZOxZsqCmHhkafT0/1liLs=
+github.com/irgifauzi/back-bola v0.0.11/go.mod h1:ZqNfI37NJjo/u+1iow0H72KULeL7HvBslFN2qtqTqkQ=
 github.com/jcmturner/aescts/v2 v2.0.0/go.mod h1:AiaICIRyfYg35RUkr8yESTqvSy7csK90qZ5xfvvsoNs=
 github.com/jcmturner/dnsutils/v2 v2.0.0/go.mod h1:b0TnjGOvI/n42bZa+hmXL+kFJZsFT7G4t3HTlQ184QM=
 github.com/jcmturner/gofork v1.0.0/go.mod h1:MK8+TM0La+2rjBD4jE12Kj1pCCxK7d2LK/UM3ncEo0o=

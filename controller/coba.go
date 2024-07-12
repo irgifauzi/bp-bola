@@ -148,7 +148,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	// Parse the request body into a Presensi object
+	// Parse the request body into a Pemain object
 	var pemain inimodel.Pemain
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -157,7 +157,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	// Call the UpdatePresensi function with the parsed ID and the Presensi object
+	// Call the UpdatePemain function with the parsed ID and the Pemain object
 	err = cek.UpdatePemain(db, "pemain",
 		objectID,
 		pemain.Nama_Pemain,
@@ -180,6 +180,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		"message": "Data successfully updated",
 	})
 }
+
 
 // DeletePemainByID godoc
 // @Summary Delete data pemain.
