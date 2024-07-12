@@ -133,6 +133,18 @@ func InsertDataPemain(c *fiber.Ctx) error {
 	})
 }
 
+// UpdateDataPemain godoc
+// @Summary Update data pemain.
+// @Description Ubah data pemain.
+// @Tags Pemain
+// @Accept json
+// @Produce json
+// @Param id path string true "Masukan ID"
+// @Param request body ReqPemain true "Payload Body [RAW]"
+// @Success 200 {object} Pemain
+// @Failure 400
+// @Failure 500
+// @Router /update/{id} [put]
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
