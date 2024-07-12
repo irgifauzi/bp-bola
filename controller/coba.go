@@ -86,7 +86,7 @@ func GetPemainID(c *fiber.Ctx) error {
 // @Success 200 {object} Pemain
 // @Failure 400
 // @Failure 500
-// @Router /ins [post]
+// @Router /insert [post]
 func InsertDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var pemain inimodel.Pemain

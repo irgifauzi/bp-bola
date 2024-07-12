@@ -54,7 +54,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/ins": {
+        "/insert": {
             "post": {
                 "description": "Input data pemain.",
                 "consumes": [

@@ -112,7 +112,7 @@ paths:
       summary: Delete data pemain.
       tags:
       - Pemain
-  /ins:
+  /insert:
     post:
       consumes:
       - application/json
