@@ -180,37 +180,6 @@ paths:
       summary: Get By ID Data Pemain.
       tags:
       - Pemain
-  /update/{id}:
-    put:
-      consumes:
-      - application/json
-      description: Ubah data Pemain.
-      parameters:
-      - description: Masukan ID
-        in: path
-        name: id
-        required: true
-        type: string
-      - description: Payload Body [RAW]
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/controller.ReqPemain'
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/controller.Pemain'
-        "400":
-          description: Bad Request
-        "500":
-          description: Internal Server Error
-      summary: Update data Pemain.
-      tags:
-      - Pemain
 schemes:
 - https
 - http

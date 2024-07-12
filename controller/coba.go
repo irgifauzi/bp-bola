@@ -3,7 +3,6 @@ package controller
 import (
 	"errors"
 	"fmt"
-	"log"
 	"net/http"
 
 	"github.com/aiteung/musik"
@@ -137,8 +136,10 @@ func InsertDataPemain(c *fiber.Ctx) error {
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
+	// Get the ID from the URL parameter
 	id := c.Params("id")
 
+	// Parse the ID into an ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -147,6 +148,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
+	// Parse the request body into a Presensi object
 	var pemain inimodel.Pemain
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -155,9 +157,8 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	log.Printf("ObjectID: %v, Pemain: %v", objectID, pemain)
-
-	err = cek.UpdatePemain(db, "Pemain",
+	// Call the UpdatePresensi function with the parsed ID and the Presensi object
+	err = cek.UpdatePemain(db, "pemain",
 		objectID,
 		pemain.Nama_Pemain,
 		pemain.Tim,
