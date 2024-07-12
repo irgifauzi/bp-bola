@@ -131,22 +131,11 @@ func InsertDataPemain(c *fiber.Ctx) error {
 	})
 }
 
-
-// UpdateDataPemain godoc
-// @Summary Update data Pemain.
-// @Description Ubah data Pemain.
-// @Tags Pemain
-// @Accept json
-// @Produce json
-// @Param id path string true "Masukan ID"
-// @Param request body ReqPemain true "Payload Body [RAW]"
-// @Success 200 {object} Pemain
-// @Failure 400
-// @Failure 500
-// @Router /update/{id} [put]
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
+
 	id := c.Params("id")
+
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -162,8 +151,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	// Call the UpdatePemain function with the parsed ID and the Pemain object
-	err = cek.UpdatePemain(db, "pemain",
+	err = cek.UpdatePemain(db, "Games",
 		objectID,
 		pemain.Nama_Pemain,
 		pemain.Tim,
@@ -173,7 +161,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		pemain.Tanggal_Lahir,
 		pemain.Negara,
 		pemain.No_Punggung)
-	if err != nil {
+		if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
@@ -182,9 +170,10 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusOK).JSON(fiber.Map{
 		"status":  http.StatusOK,
-		"message": "Data pemain successfully updated",
+		"message": "Data successfully updated",
 	})
 }
+
 // DeletePemainByID godoc
 // @Summary Delete data pemain.
 // @Description Hapus data pemain.
