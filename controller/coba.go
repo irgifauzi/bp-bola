@@ -136,10 +136,8 @@ func InsertDataPemain(c *fiber.Ctx) error {
 func UpdateDataPemain(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 
-	// Get the ID from the URL parameter
 	id := c.Params("id")
 
-	// Parse the ID into an ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -147,8 +145,6 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
-	// Parse the request body into a Pemain object
 	var pemain inimodel.Pemain
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -157,7 +153,6 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		})
 	}
 
-	// Call the UpdatePemain function with the parsed ID and the Pemain object
 	err = cek.UpdatePemain(db, "pemain",
 		objectID,
 		pemain.Nama_Pemain,
@@ -168,7 +163,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		pemain.Tanggal_Lahir,
 		pemain.Negara,
 		pemain.No_Punggung)
-	if err != nil {
+		if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
