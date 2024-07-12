@@ -3,22 +3,24 @@ package controller
 import (
 	"errors"
 	"fmt"
+	"log"
+	"net/http"
+
 	"github.com/aiteung/musik"
 	"github.com/gofiber/fiber/v2"
-	cek "github.com/irgifauzi/back-bola/module"
 	inimodel "github.com/irgifauzi/back-bola/model"
+	cek "github.com/irgifauzi/back-bola/module"
 	"github.com/irgifauzi/bp-bola/config"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
-	"net/http"
-
 )
 
 func Homepage(c *fiber.Ctx) error {
 	ipaddr := musik.GetIPaddress()
 	return c.JSON(ipaddr)
 }
-//p
+
+// p
 // GetAllPemain godoc
 // @Summary Get All Data Pemain.
 // @Description Mengambil semua data pemain.
@@ -74,6 +76,7 @@ func GetPemainID(c *fiber.Ctx) error {
 	}
 	return c.JSON(ps)
 }
+
 // InsertDataPemain godoc
 // @Summary Insert data pemain.
 // @Description Input data pemain.
@@ -143,6 +146,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
+
 	var pemain inimodel.Pemain
 	if err := c.BodyParser(&pemain); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -150,6 +154,8 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
+
+	log.Printf("ObjectID: %v, Pemain: %v", objectID, pemain)
 
 	err = cek.UpdatePemain(db, "Pemain",
 		objectID,
@@ -161,7 +167,7 @@ func UpdateDataPemain(c *fiber.Ctx) error {
 		pemain.Tanggal_Lahir,
 		pemain.Negara,
 		pemain.No_Punggung)
-		if err != nil {
+	if err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
 			"status":  http.StatusInternalServerError,
 			"message": err.Error(),
